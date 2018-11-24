@@ -12,6 +12,9 @@ const ADD_DAY_MUTATION = gql`
 
 export default class AddDayForm extends Component {
   state = {
+    resort: "",
+    date: new Date().toISOString().substring(0, 10),
+    conditions: "POWDER",
     error: null
   };
   displayError = error => {
@@ -20,6 +23,13 @@ export default class AddDayForm extends Component {
   render() {
     return (
       <Fragment>
+        <select onChange={e => this.setState({ conditions: e.target.value })}>
+          {this.props.conditions.map(c => (
+            <option key={c} value={c}>
+              {c.toLowerCase()}
+            </option>
+          ))}
+        </select>
         <Mutation mutation={ADD_DAY_MUTATION} onError={this.displayError}>
           {mutation => <button onClick={mutation}>Add Day</button>}
         </Mutation>

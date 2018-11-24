@@ -12,9 +12,6 @@ const ADD_DAY_MUTATION = gql`
 
 export default class AddDayForm extends Component {
   state = {
-    resort: "",
-    date: new Date().toISOString().substring(0, 10),
-    conditions: "POWDER",
     error: null
   };
   displayError = error => {
