@@ -7,9 +7,9 @@ const typeDefs = `
         id: ID!
         "The date that this ski day occurred"
         date: String!
-        "The resort where this ski day took place"
-        resort: String!
-        "The conditions at the resort on this particular ski day"
+        "The mountain where this ski day took place"
+        mountain: String!
+        "The conditions at the mountain on this particular ski day"
         conditions: Conditions
     }
 
@@ -44,19 +44,19 @@ let skiDays = [
   {
     id: "2WEKaVNO",
     date: "3/28/2019",
-    resort: "Kirkwood",
+    mountain: "Mt. Tallac",
     conditions: "POWDER"
   },
   {
     id: "hwX6aOr7",
     date: "1/2/2019",
-    resort: "Jackson Hole",
+    mountain: "Freel Peak",
     conditions: "POWDER"
   },
   {
     id: "a4vhAoFG",
     date: "11/23/2019",
-    resort: "Alpine Meadows",
+    mountain: "Tamarack Peak",
     conditions: "ICE"
   }
 ];
@@ -77,4 +77,8 @@ const server = new ApolloServer({
   resolvers
 });
 
-server.listen().then(({ url }) => console.log(`Listening on ${url}`));
+server
+  .listen()
+  .then(({ url }) => `GraphQL server listening on ${url}`)
+  .then(console.log)
+  .catch(console.error);
