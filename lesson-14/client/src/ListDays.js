@@ -10,7 +10,7 @@ const ListDays = ({ total = 0, days = [] }) => (
     <tbody>
       {days.map(day => (
         <tr key={day.id}>
-          <td>{day.resort}</td>
+          <td>{day.mountain}</td>
           <td>{day.date}</td>
           <td>{day.conditions}</td>
         </tr>
