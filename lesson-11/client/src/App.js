@@ -8,7 +8,7 @@ const COUNT_DAYS = gql`
     allDays {
       id
       date
-      resort
+      mountain
       conditions
     }
   }
