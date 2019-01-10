@@ -104,7 +104,7 @@ const resolvers = {
   },
   Date: new GraphQLScalarType({
     name: "Date",
-    description: "A valid date time value.",
+    description: "A valid date value.",
     parseValue: value => new Date(value),
     serialize: value => new Date(value).toISOString().substring(0, 10),
     parseLiteral: ast => ast.value
